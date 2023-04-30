@@ -1,0 +1,11 @@
+{% extends 'base.html' %} <!--to get the necessary elements from base.html-->
+
+{% block content %} <!-- used to define a block of content that can be overridden by child templates.-->>
+<h2>Log In</h2>
+<form method="post"> <!--create a form with method post-->
+    {% csrf_token %} <!--for security concerns, namely to prevent a CSRF Attack-->
+    {{ form.as_p }} <!--used to output form's contents between paragraph tags-->
+    <button type="submit">Log In</button> <!--submit button-->
+</form> 
+{% endblock content %}
+    
